@@ -1,0 +1,14 @@
+<h1>Dogs App by Helen</h1>
+ <ul>
+  <% @dogs.each do |dog| %>
+  <li><%= "Dog Number: #{dog.id}" %></li>
+  <li><%= "Name: " + dog.name %></li>
+  <li><%= "Gender: " + dog.gender %></li>
+  <li><%= "Age:  #{dog.age}" %></li>
+  <li><%= "Breed: " + dog.breed %></li>
+  <% if dog.vaccinated? == true %>
+      <li><%= "vaccinated" %></li>
+  <% end %>
+  <br>
+  <% end %>
+</ul>
