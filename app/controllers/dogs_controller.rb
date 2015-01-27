@@ -1,10 +1,10 @@
 class DogsController < ApplicationController
+  before_action :find_dog, only: [:show, :edit, :update, :destroy]
   def index
-    @dogs = Dog.all
+    @dogs = Dog.order(:id)
   end
 
   def show
-    @dog = Dog.find(params[:id])
   end
 
   def new
@@ -17,22 +17,24 @@ class DogsController < ApplicationController
   end
 
   def edit
-    @dog = Dog.find(params[:id])
   end
 
   def update
-    @dog = Dog.find(params[:id])
     @dog.update_attributes(dog_params)
     redirect_to action: :index
   end
 
   def destroy
-    @dog = Dog.find(params[:id])
     @dog.destroy
     redirect_to action: :index
   end
 
   private
+
+  def find_dog
+    @dog = Dog.find(params[:id])
+  end
+
   def dog_params
     params.require(:dog).permit(:name, :gender, :age, :breed, :vaccinated?)
   end
