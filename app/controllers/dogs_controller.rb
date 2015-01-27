@@ -12,6 +12,16 @@ class DogsController < ApplicationController
     redirect_to action: :index
   end
 
+  def edit
+    @dog = Dog.find(params[:id])
+  end
+
+  def update
+    @dog = Dog.find(params[:id])
+    @dog.update_attributes(dog_params)
+    redirect_to action: :index
+  end
+
   def destroy
     @dog = Dog.find(params[:id])
     @dog.destroy
