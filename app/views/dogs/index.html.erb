@@ -8,7 +8,10 @@
   <li><%= "Breed: " + dog.breed %></li>
   <% if dog.vaccinated? == true %>
       <li><%= "vaccinated" %></li>
+  <% else %>
+      <li><%= "not vaccinated" %> </li>
   <% end %>
+  <%= link_to "Show", dog_path(dog) %>
   <%= link_to "Edit", edit_dog_path(dog) %>
   <%= link_to "Delete", dog_path(dog), method: :delete %>
   <br>

@@ -1,0 +1,20 @@
+<h1>Dogs App by Helen</h1>
+  <% if @dog.vaccinated? == true %>
+  <% vaccination = "vaccinated" %>
+  <% else %>
+  <% vaccination = "not vaccinated" %>
+  <% end %>
+<ul>
+  <li><%= "Dog's name: " + @dog.name %></li>
+  <li><%= "Dog's gender: " + @dog.gender %></li>
+  <li><%= "Dogs's age #{@dog.age}" %></li>
+  <li><%= "Dog's breed " + @dog.breed %></li>
+  <li><%= "Dog's vaccination status: " + vaccination %></li>
+</ul>
+
+<%= link_to "Back to All Dogs", dogs_path %>
+
+
+
+
+
