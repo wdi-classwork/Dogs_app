@@ -9,6 +9,7 @@
   <% if dog.vaccinated? == true %>
       <li><%= "vaccinated" %></li>
   <% end %>
+  <%= link_to "Delete", dog_path(dog), method: :delete %>
   <br>
   <% end %>
 </ul>

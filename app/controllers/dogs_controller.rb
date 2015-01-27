@@ -12,6 +12,12 @@ class DogsController < ApplicationController
     redirect_to action: :index
   end
 
+  def destroy
+    @dog = Dog.find(params[:id])
+    @dog.destroy
+    redirect_to action: :index
+  end
+
   private
   def dog_params
     params.require(:dog).permit(:name, :gender, :age, :breed, :vaccinated?)
