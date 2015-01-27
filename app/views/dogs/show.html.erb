@@ -1,9 +1,8 @@
-<h1>Dogs App by Helen</h1>
-  <% if @dog.vaccinated? == true %>
-  <% vaccination = "vaccinated" %>
-  <% else %>
-  <% vaccination = "not vaccinated" %>
-  <% end %>
+<% if @dog.vaccinated? == true %>
+<% vaccination = "vaccinated" %>
+<% else %>
+<% vaccination = "not vaccinated" %>
+<% end %>
 <ul>
   <li><%= "Dog's name: " + @dog.name %></li>
   <li><%= "Dog's gender: " + @dog.gender %></li>

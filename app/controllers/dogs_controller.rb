@@ -12,16 +12,23 @@ class DogsController < ApplicationController
   end
 
   def create
-    @dog = Dog.create(dog_params)
-    redirect_to action: :index
+    @dog = Dog.new(dog_params)
+    if @dog.save
+      redirect_to action: :index
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    @dog.update_attributes(dog_params)
-    redirect_to action: :index
+    if @dog.update_attributes(dog_params)
+      redirect_to action: :index
+    else
+      render :edit
+    end
   end
 
   def destroy
